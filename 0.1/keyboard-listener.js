@@ -1,5 +1,5 @@
-export default function createKeyboardListener(){
-        
+import createGame from 'createGame'
+export default function createKeyboardListener(document){
     const state = {
         observers: []
     }
@@ -15,13 +15,14 @@ export default function createKeyboardListener(){
     
     document.addEventListener('keydown', handleKeydown)
     
+    const game = createGame()
     function handleKeydown(event){
 
         const keyPressed = event.key
         
 
         const command = {
-            playerId: 'player2',                   
+            playerId: game.state.jogadores['playerId'],                   
             keyPressed
         }
     
