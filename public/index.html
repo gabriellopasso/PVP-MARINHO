@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <style>
+        body {
+                margin: 40px 0 0 0;
+                padding: 0;
+                background-color: #EEE;
+                text-align: center;
+            }
         #screen{
             border: 10px solid grey;
             image-rendering: pixelated;
             image-rendering: crisp-edges;
             image-rendering: -moz-crisp-edges;
-            width: 400px;
-            height: 400px;
+            /*width: 400px;
+            height: 400px;*/
+            display: inline-block;
+            vertical-align: top;
                 }
+        #scoreTable {
+                font-size: 13px;
+                vertical-align: top;
+                display: inline-block;
+                font-family: Arial, Helvetica, sans-serif
+            }
+        
     </style>
     <script src="/socket.io/socket.io.js"></script>
     <head>
@@ -16,7 +31,10 @@
         <title>PVP-Marinho</title>  
     </head>
     <body>
-        <canvas id="screen"></canvas>
+        <div id="gameDiv">
+            <canvas id="screen"></canvas>
+            <table id="scoreTable"></table>
+        </div>
     
         <script type="module">
             import createKeyboardListener from './keyboard-listener.js'

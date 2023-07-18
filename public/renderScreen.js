@@ -11,20 +11,20 @@ export default function renderScreen(screen, game, requestAnimationFrame, curren
     for (const fruitId in game.state.frutas) {
         const fruit = game.state.frutas[fruitId]
         context.fillStyle = '#08a331'
-        context.fillRect(fruit.x, fruit.y, 1, 1 );
+        context.fillRect(fruit.x, fruit.y, 10, 10 );
     }
     
     for (const playerId in game.state.jogadores){
         const player = game.state.jogadores[playerId]
         context.fillStyle = '#000000'
-        context.fillRect(player.x, player.y, 1, 1)
+        context.fillRect(player.x, player.y, 10, 10)
     }
 
     const currentPlayer = game.state.jogadores[currentPlayerId]
 
     if (currentPlayer) {
         context.fillStyle = '#FDED00'
-        context.fillRect(currentPlayer.x, currentPlayer.y, 1, 1)
+        context.fillRect(currentPlayer.x, currentPlayer.y, 10, 10)
     }
 
     requestAnimationFrame(()=> {

@@ -3,8 +3,8 @@ export default function createGame(){
         jogadores: {},
         frutas: {},
         screen: {
-            width: 20, 
-            height: 20
+            width: 500, 
+            height: 400
         }
     }
     
