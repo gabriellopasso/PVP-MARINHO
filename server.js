@@ -17,14 +17,14 @@ game.subscribe((command) => {
     sockets.emit(command.type, command)
 })
 
-console.log(game.state)
+//console.log(game.state)
 
 sockets.on('connection', (socket) => {
     const playerId = socket.id
     console.log(`> player connected on Server with id: ${playerId}`)
 
     game.addPlayer({ playerId: playerId })
-    console.log(game.state)
+    //console.log(game.state)
 
     socket.emit('setup', game.state)
 

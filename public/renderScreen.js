@@ -2,8 +2,10 @@
 
 export default function renderScreen(screen, game, requestAnimationFrame, currentPlayerId){
     const context = screen.getContext('2d')
+    screen.width = game.state.screen.width
+    screen.height = game.state.screen.height
     context.fillStyle = 'white'
-    context.fillRect(0, 0, 10, 10)
+    context.fillRect(0, 0, game.state.screen.width, game.state.screen.height)
     
     
     for (const fruitId in game.state.frutas) {
